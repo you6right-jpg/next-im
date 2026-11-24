@@ -1,0 +1,36 @@
+[submodule "next-im-admin"]
+	path = next-im-admin
+	url = git@github.com:you6right-jpg/next-im-admin.git
+[submodule "next-im-conformance-tests"]
+	path = next-im-conformance-tests
+	url = git@github.com:you6right-jpg/next-im-conformance-tests.git
+[submodule "next-im-demo"]
+	path = next-im-demo
+	url = git@github.com:you6right-jpg/next-im-demo.git
+[submodule "next-im-deploy"]
+	path = next-im-deploy
+	url = git@github.com:you6right-jpg/next-im-deploy.git
+[submodule "next-im-docs"]
+	path = next-im-docs
+	url = git@github.com:you6right-jpg/next-im-docs.git
+[submodule "next-im-open-platform"]
+	path = next-im-open-platform
+	url = git@github.com:you6right-jpg/next-im-open-platform.git
+[submodule "next-im-protocol"]
+	path = next-im-protocol
+	url = git@github.com:you6right-jpg/next-im-protocol.git
+[submodule "next-im-sdk-android"]
+	path = next-im-sdk-android
+	url = git@github.com:you6right-jpg/next-im-sdk-android.git
+[submodule "next-im-sdk-flutter"]
+	path = next-im-sdk-flutter
+	url = git@github.com:you6right-jpg/next-im-sdk-flutter.git
+[submodule "next-im-sdk-ios"]
+	path = next-im-sdk-ios
+	url = git@github.com:you6right-jpg/next-im-sdk-ios.git
+[submodule "next-im-sdk-web"]
+	path = next-im-sdk-web
+	url = git@github.com:you6right-jpg/next-im-sdk-web.git
+[submodule "next-im-server"]
+	path = next-im-server
+	url = git@github.com:you6right-jpg/next-im-server.git
