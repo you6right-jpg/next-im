@@ -29,18 +29,18 @@
 
 ## 文档导航
 
-- `docs/01-product/`：产品定位、范围、角色和商业化能力
-- `docs/02-architecture/`：总体架构、模块边界、部署拓扑
-- `docs/03-protocol/`：WebSocket、HTTP、消息协议与兼容性
-- `docs/04-database/`：数据模型、索引、分库分表策略
-- `docs/05-server/`：Go 服务端规范、模块开发模板
-- `docs/06-sdk/`：跨端 SDK 统一能力与平台约定
-- `docs/07-security/`：认证、租户隔离、数据安全
-- `docs/08-reliability/`：消息可靠性、同步、故障处理
-- `docs/09-operations/`：部署、监控、备份、升级
-- `docs/10-testing/`：测试策略与验收标准
-- `ai/`：AI 编码规则、任务模板、代码审查清单
-- `decisions/`：架构决策记录（ADR）
+- `docs/01-product/`：产品定位（`product-overview.md`）、功能优先级矩阵（`feature-matrix.md`）
+- `docs/02-architecture/`：总体架构（`system-architecture.md`）、模块边界（`module-boundaries.md`）、部署拓扑（`deployment.md`）
+- `docs/03-protocol/`：协议总则（`protocol-overview.md`）、WebSocket 交互规范（`websocket-protocol.md`）、Protobuf v1 详细定义（`proto-spec-v1.md`）、HTTP API 契约（`http-api.md`）、错误码注册表（`error-codes.md`）
+- `docs/04-database/`：数据模型（`data-model.md`）、P0 核心 DDL 表结构（`p0-schema-spec.md`）、Redis Key 与路由设计（`redis-design.md`）、分库分表与索引策略（`sharding-strategy.md`）
+- `docs/05-server/`：Go 服务端规范（`go-server-guide.md`）、配置日志错误与启停规范（`config-and-bootstrap.md`）、模块开发模板（`module-template.md`）
+- `docs/06-sdk/`：跨端 SDK 架构（`sdk-architecture.md`）、iOS SDK 详细规范（`ios-sdk-spec.md`）
+- `docs/07-security/`：安全基线（`security-baseline.md`）、认证授权与多租户上下文规范（`auth-and-tenant-spec.md`）
+- `docs/08-reliability/`：消息可靠性（`message-reliability.md`）、同步与状态模型（`sync-and-state.md`）、Outbox 与消息分发设计（`outbox-and-delivery.md`）
+- `docs/09-operations/`：部署升级与恢复（`deployment-and-upgrade.md`）、可观测性与服务目标（`observability-and-slo.md`）
+- `docs/10-testing/`：测试策略与验收标准（`test-strategy.md`）
+- `ai/`：AI 编码规则（`AGENTS.md`）、首批任务顺序（`first-tasks.md`）、任务模板（`task-template.md`）、代码审查清单（`code-review-checklist.md`）
+- `decisions/`：架构决策记录（`ADR-0001-architecture-baseline.md`、`ADR-0002-id-tenant-and-tech-baseline.md`）
 
 ## 关键原则
 

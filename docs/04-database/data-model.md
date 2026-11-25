@@ -56,16 +56,19 @@
 - `(app_id, conversation_id, seq)` 唯一。
 - `(app_id, message_id)` 唯一。
 
-注意：具体唯一索引是否包含 tenant_id，取决于 app_id 的全局唯一性定义；必须在 ID 和租户模型定稿时统一。
+已定稿约定（见 `decisions/ADR-0002-id-tenant-and-tech-baseline.md`）：
+- `app_id` 为平台全局唯一且归属于唯一 `tenant_id`，因此上述唯一索引以 `app_id` 为最左前缀即可保证隔离唯一性。
+- 所有业务表仍必须同时存储 `tenant_id` 与 `app_id`，仓储层查询必须注入可信上下文的双字段条件。
 
 ## 4. 序列分配
 
-会话 `seq` 必须单调递增。需要明确并发发送时的原子分配方式，例如会话序列表行锁 / 原子更新或经过验证的序列服务。不能使用 `MAX(seq)+1` 作为并发安全方案。
+会话 `seq` 必须单调递增。P0 阶段在 `im_conversation` 表维护 `last_seq`，在消息持久化同一事务中通过行锁（`SELECT ... FOR UPDATE` + `UPDATE`）原子递增分配；严禁使用 `MAX(seq)+1`。具体表 DDL 与事务 SQL 见 `docs/04-database/p0-schema-spec.md`。
 
 ## 5. 容量与扩展
 
 - 初期 MySQL 单库或主从即可。
-- 消息表增长后，依据租户、会话和时间分布评估分区 / 分表。
+- 消息表增长后，依据租户、会话和时间分布评估分区 / 分表，详见 `docs/04-database/sharding-strategy.md`。
+- 在线连接路由与缓存 Key 命名见 `docs/04-database/redis-design.md`。
 - 分表路由规则一旦发布需长期兼容。
 - OpenSearch 是索引，不是消息事实数据源。
 - 归档、删除和合规保留周期必须有明确策略。
